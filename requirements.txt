@@ -1,0 +1,17 @@
+--extra-index-url https://download.pytorch.org/whl/cu130
+
+torch==2.14.0+cu130
+
+numpy==2.5.3
+tiktoken==0.14.0
+tqdm==4.70.1
+
+transformers==5.17.0
+tokenizers==0.23.2
+huggingface-hub==1.32.0
+sentencepiece==0.2.2
+safetensors==0.8.0
+
+faiss-cpu==1.15.1
+
+gradio==6.28.0

@@ -1,0 +1,28 @@
+NOVA TRUSTED RAG BUILD REPORT
+================================================================================
+
+CORE source: G:\NOVA\NOVA_project_NEW\rag\core_index.jsonl
+CORE SHA-256: 09f6b4e8aff96dc2b64fd56b717c7d028641d935056ffa2861d7784c96b3820e
+
+TECHNICAL source: G:\NOVA\NOVA_project_NEW\rag\technical_index.jsonl
+TECHNICAL SHA-256: 938c9648971584c3c2ac34609bef7cc37ef988810f97093ada87c6065c9d3aea
+
+Model: intfloat/multilingual-e5-small
+Pooling: masked_mean
+
+CORE embedding: question + aliases
+TECHNICAL embedding: question only
+Answers embedded: NO
+
+CORE added: 12
+TECHNICAL added: 1398
+Duplicates skipped: 0
+TOTAL: 1410
+
+Embedding dimension: 384
+
+FAISS: G:\NOVA\NOVA_project_NEW\rag\trusted_index.faiss
+JSONL: G:\NOVA\NOVA_project_NEW\rag\trusted_index.jsonl
+
+Embedding time: 0.4s
+Total time: 4.0s

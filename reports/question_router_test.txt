@@ -1,0 +1,835 @@
+====================================================================================================
+NOVA QUESTION ROUTER TEST
+====================================================================================================
+
+Embedding:
+  intfloat/multilingual-e5-small
+  masked_mean
+  indexed text = source question only
+
+Router records: 16398
+No reranker.
+No threshold.
+Top 10.
+
+====================================================================================================
+QUESTION 1
+====================================================================================================
+QUERY: Что такое TCP и чем он отличается от UDP?
+time=0.1526s
+top10 source counts: {'technical': 10}
+
+#1 score=0.923010 type=technical
+source=nova_technical_v1_1
+line=842
+SOURCE QUESTION:
+Чем TCP отличается от UDP на практическом уровне?
+
+#2 score=0.880667 type=technical
+source=nova_technical_v1_1
+line=841
+SOURCE QUESTION:
+Что такое TCP port?
+
+#3 score=0.872967 type=technical
+source=nova_technical_v1_1
+line=1368
+SOURCE QUESTION:
+Сравни TCP и UDP без совета «что быстрее».
+
+#4 score=0.860873 type=technical
+source=nova_technical_v1_1
+line=1186
+SOURCE QUESTION:
+Объясни простыми техническими словами, что означает TCP.
+
+#5 score=0.851070 type=technical
+source=nova_technical_v1_1
+line=1187
+SOURCE QUESTION:
+Какую роль играет UDP? Только концептуально.
+
+#6 score=0.844944 type=technical
+source=nova_technical_v1_1
+line=1190
+SOURCE QUESTION:
+Какую задачу решает TCP handshake? Без кода.
+
+#7 score=0.844242 type=technical
+source=nova_technical_v1_1
+line=175
+SOURCE QUESTION:
+Чем cp -a отличается от простого cp при копировании каталога?
+
+#8 score=0.842305 type=technical
+source=nova_technical_v1_1
+line=1342
+SOURCE QUESTION:
+TCP соединяется, но TLS handshake падает. Как сузить причину?
+
+#9 score=0.841772 type=technical
+source=nova_technical_v1_1
+line=858
+SOURCE QUESTION:
+TCP port доступен, но HTTP-клиент получает TLS error. Что это говорит?
+
+#10 score=0.839403 type=technical
+source=nova_technical_v1_1
+line=877
+SOURCE QUESTION:
+Почему TCP connection может быть установлено, но первый запрос зависает?
+
+====================================================================================================
+QUESTION 2
+====================================================================================================
+QUERY: Чем Docker-контейнер отличается от виртуальной машины?
+time=0.0065s
+top10 source counts: {'broad': 9, 'technical': 1}
+
+#1 score=0.882625 type=broad
+source=nova_knowledge
+q_idx=12894
+SOURCE QUESTION:
+Какие способы существуют для связи контейнеров Docker между собой через виртуальную сеть и какова их разница в плане производительности и безопасности?
+
+#2 score=0.881894 type=technical
+source=nova_technical_v1_1
+line=256
+SOURCE QUESTION:
+Чем Docker image отличается от container?
+
+#3 score=0.879606 type=broad
+source=nova_knowledge
+q_idx=11959
+SOURCE QUESTION:
+Каковы основные отличия между Docker и классическими виртуальными машинами в плане масштабирования, ресурсов и изоляции приложений?
+
+#4 score=0.873013 type=broad
+source=nova_knowledge
+q_idx=8976
+SOURCE QUESTION:
+Как сравнить производительность контейнеров Docker с виртуальными машинами для определенного приложения, учитывая ограничения ресурсов и объем данных, обрабатываемых в режиме реального времени?
+
+#5 score=0.867700 type=broad
+source=nova_knowledge
+q_idx=2838
+SOURCE QUESTION:
+Как можно добиться максимальной производительности контейнеров Docker на виртуальной машине с ограниченными ресурсами CPU и RAM?
+
+#6 score=0.866516 type=broad
+source=nova_knowledge
+q_idx=9847
+SOURCE QUESTION:
+Какие существуют способы связи контейнеров Docker друг с другом и чем они различаются?
+
+#7 score=0.865962 type=broad
+source=nova_knowledge
+q_idx=6642
+SOURCE QUESTION:
+Каковы основные различия между использованием Docker для разработки и эксплуатации веб-приложения в сравнении с виртуализацией через VirtualBox?
+
+#8 score=0.863145 type=broad
+source=nova_knowledge
+q_idx=11958
+SOURCE QUESTION:
+Как настроить сетевой доступ к контейнерам Docker из других контейнеров на той же виртуальной машине через пользовательское подсеть и какой командой это сделать?
+
+#9 score=0.861726 type=broad
+source=nova_knowledge
+q_idx=12351
+SOURCE QUESTION:
+Какие шаги вы предпримете для миграции существующего приложения из традиционной виртуальной машины в контейнеры Docker, если приложение имеет зависимости от других сервисов и баз данных?
+
+#10 score=0.861317 type=broad
+source=nova_knowledge
+q_idx=6480
+SOURCE QUESTION:
+Какова разница между использованием Docker для запуска веб-приложения на локальной машине разработчика и его развертывания в производственной среде с помощью Docker?
+
+====================================================================================================
+QUESTION 3
+====================================================================================================
+QUERY: Почему нельзя использовать изменяемый объект как значение аргумента по умолчанию в Python?
+time=0.0065s
+top10 source counts: {'broad': 6, 'technical': 4}
+
+#1 score=0.889880 type=broad
+source=nova_knowledge
+q_idx=1601
+SOURCE QUESTION:
+Как можно изменить значение по умолчанию для параметра в ранее объявленной функции в Python?
+
+#2 score=0.883006 type=broad
+source=nova_knowledge
+q_idx=11968
+SOURCE QUESTION:
+Как изменить значение по умолчанию функции в Python без переопределения всей функции?
+
+#3 score=0.880818 type=broad
+source=nova_knowledge
+q_idx=2222
+SOURCE QUESTION:
+Как изменить значение по умолчанию в Python для функции, когда это значение уже было присвоено переменной в локальной области?
+
+#4 score=0.876869 type=technical
+source=nova_technical_v1_1
+line=128
+SOURCE QUESTION:
+Код выполняется, но дает неправильный результат: Функция изменяет аргумент неожиданно. Найди логическую ошибку.
+```python
+def add_default(options):
+    options['timeout'] = 30
+    return options
+```
+
+#5 score=0.869470 type=broad
+source=nova_knowledge
+q_idx=1332
+SOURCE QUESTION:
+Какие есть способы в Python ограничить количество аргументов функции по умолчанию?
+
+#6 score=0.867996 type=technical
+source=nova_technical_v1_1
+line=104
+SOURCE QUESTION:
+Найди проблему «Изменение словаря при обходе» и исправь код минимально.
+```python
+for key in config:
+    if config[key] is None:
+        del config[key]
+```
+
+#7 score=0.863485 type=broad
+source=nova_knowledge
+q_idx=6427
+SOURCE QUESTION:
+Как можно надёжно предотвратить изменение объектов одного класса другими объектами того же класса в Python?
+
+#8 score=0.861921 type=technical
+source=nova_technical_v1_1
+line=471
+SOURCE QUESTION:
+Диагностируй случай «Приоритет and/or меняет условие». Найди причину и исправь только необходимое.
+```python
+if active and role == 'admin' or role == 'owner':
+    allow()
+```
+
+#9 score=0.860310 type=technical
+source=nova_technical_v1_1
+line=327
+SOURCE QUESTION:
+Что дает `@dataclass(frozen=True)` и является ли объект глубоко неизменяемым?
+
+#10 score=0.859993 type=broad
+source=nova_knowledge
+q_idx=9905
+SOURCE QUESTION:
+Каким образом в Python можно проверить, является ли переданное значение объектом определенного пользовательского класса с наследованием, но без использования isinstance() или type()?
+
+====================================================================================================
+QUESTION 4
+====================================================================================================
+QUERY: В чём разница между git merge и git rebase?
+time=0.0055s
+top10 source counts: {'broad': 10}
+
+#1 score=0.880705 type=broad
+source=nova_knowledge
+q_idx=5511
+SOURCE QUESTION:
+Как можно эффективно использовать команду `rebase` в Git для интеграции двух разных веток, если одна из них уже содержит изменения, которые были впоследствии переопределены второй веткой?
+
+#2 score=0.871245 type=broad
+source=nova_knowledge
+q_idx=2442
+SOURCE QUESTION:
+Как переключиться между ветками в Git и объединить изменения из одной ветки в другую с помощью merge или rebase, если эти ветки уже слиты друг с другом?
+
+#3 score=0.868896 type=broad
+source=nova_knowledge
+q_idx=1357
+SOURCE QUESTION:
+Как вы можете использовать команду `rebase` в Git для объединения нескольких commits в один, чтобы упростить историю проекта перед пушем изменений на удаленный репозиторий?
+
+#4 score=0.867747 type=broad
+source=nova_knowledge
+q_idx=2112
+SOURCE QUESTION:
+Как можно использовать команду `rebase` для перемещения изменений с одной ветки на другую в Git?
+
+#5 score=0.866299 type=broad
+source=nova_knowledge
+q_idx=9248
+SOURCE QUESTION:
+Как правильно выполнить сброс (revert) изменения в Git через rebase, если изменение было сделано после нескольких коммитов и вы хотите сохранить все предыдущие commits кроме одного, который нужно отка
+
+#6 score=0.861260 type=broad
+source=nova_knowledge
+q_idx=1161
+SOURCE QUESTION:
+Как лучше всего совместить две ветки с большим количеством commits, используя rebase для сохранения истории коммитов в каждой ветке и предотвращения создания большой сложной структуры merge commit?
+
+#7 score=0.861110 type=broad
+source=nova_knowledge
+q_idx=3619
+SOURCE QUESTION:
+Как можно использовать команду `rebase` в Git для объединения нескольких коммитов в один, чтобы упростить историю проекта?
+
+#8 score=0.861075 type=broad
+source=nova_knowledge
+q_idx=14844
+SOURCE QUESTION:
+Как переключиться с одной ветки на другую в режиме rebase, если между ними уже были merge?
+
+#9 score=0.860556 type=broad
+source=nova_knowledge
+q_idx=13720
+SOURCE QUESTION:
+Как я могу использовать `rebase` для переноса фич из одной ветки в другую, не создавая merge-commit'ов?
+
+#10 score=0.859182 type=broad
+source=nova_knowledge
+q_idx=7326
+SOURCE QUESTION:
+Как я могу безопасно и эффективно переместить изменения между двумя ветками, используя rebase в Git?
+
+====================================================================================================
+QUESTION 5
+====================================================================================================
+QUERY: Как заполнить пропущенные значения в pandas DataFrame?
+time=0.0070s
+top10 source counts: {'broad': 10}
+
+#1 score=0.910947 type=broad
+source=nova_knowledge
+q_idx=6356
+SOURCE QUESTION:
+Какие методы можно использовать в Pandas для анализа данных в DataFrame с пропущенными значениями?
+
+#2 score=0.909328 type=broad
+source=nova_knowledge
+q_idx=8351
+SOURCE QUESTION:
+Каким образом можно наиболее эффективно обработать пропущенные значения в столбце с датами в DataFrame Pandas, чтобы сохранить как можно больше информации и минимизировать ошибки в последующих вычисле
+
+#3 score=0.906411 type=broad
+source=nova_knowledge
+q_idx=10223
+SOURCE QUESTION:
+Как применить функцию apply в Pandas для вычисления среднего значения каждого столбца в DataFrame с пропущенными значениями, используя метод заполнения отсутствующих значений предыдущим значением (for
+
+#4 score=0.896495 type=broad
+source=nova_knowledge
+q_idx=12660
+SOURCE QUESTION:
+Как правильно обработать пропущенные значения в колонке дат в DataFrame Pandas для дальнейшего построения временного ряда?
+
+#5 score=0.896124 type=broad
+source=nova_knowledge
+q_idx=11335
+SOURCE QUESTION:
+Как наиболее эффективно обработать пропущенные значения в столбце с датами в DataFrame pandas?
+
+#6 score=0.894756 type=broad
+source=nova_knowledge
+q_idx=7276
+SOURCE QUESTION:
+Как наиболее эффективно заполнить пропущенные значения в столбце с датами в датафрейме Pandas, где данные отсутствуют в нерегулярных интервалах?
+
+#7 score=0.894751 type=broad
+source=nova_knowledge
+q_idx=9238
+SOURCE QUESTION:
+Как использовать функцию apply() в Pandas для применения пользовательской функции к каждому элементу в серии данных с пропущенными значениями, чтобы заполнить эти пропуски уникальным способом?
+
+#8 score=0.892923 type=broad
+source=nova_knowledge
+q_idx=1918
+SOURCE QUESTION:
+Как эффективно обработать пропущенные значения в столбцах, содержащих как категориальные, так и числовые данные в DataFrame Pandas?
+
+#9 score=0.892607 type=broad
+source=nova_knowledge
+q_idx=8690
+SOURCE QUESTION:
+Как использовать функцию apply() в Pandas для вычисления среднего значения по группам данных с пропущенными значениями?
+
+#10 score=0.892476 type=broad
+source=nova_knowledge
+q_idx=3840
+SOURCE QUESTION:
+Как наиболее эффективно заполнить пропущенные значения в столбце с датами в DataFrame Pandas, если известны минимальное и максимальное возможные значения для этого столбца?
+
+====================================================================================================
+QUESTION 6
+====================================================================================================
+QUERY: Что такое PostgreSQL?
+time=0.0395s
+top10 source counts: {'broad': 10}
+
+#1 score=0.861051 type=broad
+source=nova_knowledge
+q_idx=0
+SOURCE QUESTION:
+Какие существуют способы оптимизации запросов SQL для работы с большими данными в PostgreSQL?
+
+#2 score=0.854800 type=broad
+source=nova_knowledge
+q_idx=12428
+SOURCE QUESTION:
+Как настроить контейнер с базой данных PostgreSQL через docker-compose таким образом, чтобы он был доступен для других сервисов в сети, и при этом сохранял данные после остановки и перезапускаdocker-c
+
+#3 score=0.852295 type=broad
+source=nova_knowledge
+q_idx=6946
+SOURCE QUESTION:
+Как можно в Dockerfile установить и настроить базу данных PostgreSQL с нестандартными параметрами конфигурации?
+
+#4 score=0.851905 type=broad
+source=nova_knowledge
+q_idx=1189
+SOURCE QUESTION:
+Как организовать работу с базой данных PostgreSQL в асинхронном Python-приложении при помощи асинхронной библиотеки asyncpg, если нужно одновременно обрабатывать сотни запросов на запись данных и полу
+
+#5 score=0.850912 type=broad
+source=nova_knowledge
+q_idx=10812
+SOURCE QUESTION:
+Как безопасно подключить существующую базу данных PostgreSQL к контейнеру Docker, используя volumes и предотвращая возможность несанкционированного доступа к данным в случае утечки контейнера?
+
+#6 score=0.843185 type=broad
+source=nova_knowledge
+q_idx=4352
+SOURCE QUESTION:
+Как можно использовать docker-compose для автоматизации развертывания и управления связью из нескольких контейнеров в рамках проекта, который включает базу данных PostgreSQL и два веб-сервиса на Node.
+
+#7 score=0.842762 type=broad
+source=nova_knowledge
+q_idx=1648
+SOURCE QUESTION:
+Какие шаги необходимо предпринять для создания собственного образа Docker с установленным и настраиваемым PostgreSQL базой данных?
+
+#8 score=0.841894 type=broad
+source=nova_knowledge
+q_idx=733
+SOURCE QUESTION:
+Как автоматизировать процесс резервного копирования баз данных PostgreSQL с помощью cron jobs в Linux?
+
+#9 score=0.840892 type=broad
+source=nova_knowledge
+q_idx=8475
+SOURCE QUESTION:
+Какова разница между использованием функций DATE_TRUNC() и EXTRACT() для получения дней из даты в PostgreSQL?
+
+#10 score=0.838965 type=broad
+source=nova_knowledge
+q_idx=5604
+SOURCE QUESTION:
+Как можно использовать docker volumes для обеспечения бэкапа данных в приложении, которое работает внутри контейнера Docker и использует базу данных PostgreSQL?
+
+====================================================================================================
+QUESTION 7
+====================================================================================================
+QUERY: Как работает индекс в базе данных?
+time=0.0065s
+top10 source counts: {'broad': 10}
+
+#1 score=0.877597 type=broad
+source=nova_knowledge
+q_idx=11688
+SOURCE QUESTION:
+Какие виды индексов существуют в SQL и как они влияют на производительность запросов к базе данных?
+
+#2 score=0.873672 type=broad
+source=nova_knowledge
+q_idx=3746
+SOURCE QUESTION:
+Какие виды индексов в SQL существуют и когда использовать каждый из них?
+
+#3 score=0.862719 type=broad
+source=nova_knowledge
+q_idx=3423
+SOURCE QUESTION:
+Какова оптимальная стратегия индексирования для базы данных, содержащей миллионы записей и часто запрашиваемых по полям ID, имени пользователя и дате последнего входа? Какой тип индекса использовать д
+
+#4 score=0.862273 type=broad
+source=nova_knowledge
+q_idx=101
+SOURCE QUESTION:
+Какие индексы чаще всего используются в SQL и когда их целесообразно применять, чтобы минимизировать время поиска данных?
+
+#5 score=0.857266 type=broad
+source=nova_knowledge
+q_idx=12134
+SOURCE QUESTION:
+Какова эффективность использования индексов в таблице с переменной длины столбцов и как это влияет на производительность запросов к базе данных?
+
+#6 score=0.854988 type=broad
+source=nova_knowledge
+q_idx=9092
+SOURCE QUESTION:
+Какова стратегия индексирования для базы данных с миллионом записей в таблице и регулярными операциями поиска по полю, содержащему текстовые данные?
+
+#7 score=0.854545 type=broad
+source=nova_knowledge
+q_idx=5135
+SOURCE QUESTION:
+Какие индексы SQL являются наиболее эффективными для улучшения производительности запросов в моей базе данных с миллиардами записей и сложной структурой связи между таблицами?
+
+#8 score=0.854497 type=broad
+source=nova_knowledge
+q_idx=12396
+SOURCE QUESTION:
+Как влияет количество индексов на производительность запроса в SQL?
+
+#9 score=0.854131 type=broad
+source=nova_knowledge
+q_idx=3322
+SOURCE QUESTION:
+Какие типы индексов в SQL являются наиболее эффективными для уменьшения количества блокировок и улучшения производительности при выполнении операций чтения и записи больших объемов данных с высокой на
+
+#10 score=0.853286 type=broad
+source=nova_knowledge
+q_idx=6041
+SOURCE QUESTION:
+Как выбрать стратегию управления индексами для базы данных с высоким объемом операций ввода-вывода и как минимизировать издержки от частого добавления новых индексов?
+
+====================================================================================================
+QUESTION 8
+====================================================================================================
+QUERY: Что такое REST API?
+time=0.0055s
+top10 source counts: {'technical': 2, 'broad': 8}
+
+#1 score=0.856996 type=technical
+source=nova_technical_v1_1
+line=201
+SOURCE QUESTION:
+Что означает REST и какие свойства интерфейса важнее формы URL?
+
+#2 score=0.854147 type=broad
+source=nova_knowledge
+q_idx=2335
+SOURCE QUESTION:
+Как можно использовать FastAPI для реализации REST API с динамическими маршрутами и параметрами в пути?
+
+#3 score=0.851682 type=broad
+source=nova_knowledge
+q_idx=8160
+SOURCE QUESTION:
+Как организовать в FastAPI роутинг для REST API с параметрами и вложенными ресурсами?
+
+#4 score=0.849869 type=broad
+source=nova_knowledge
+q_idx=8778
+SOURCE QUESTION:
+Как можно использовать встроенную документацию FastAPI для генерации API-документации в формате OpenAPI 3.0 и почему это полезно при разработке RESTful API с помощью FastAPI?
+
+#5 score=0.848583 type=broad
+source=nova_knowledge
+q_idx=3562
+SOURCE QUESTION:
+Как реализовать маршрутизацию для REST API с вложенными ресурсами и параметрами в FastAPI?
+
+#6 score=0.847759 type=broad
+source=nova_knowledge
+q_idx=2570
+SOURCE QUESTION:
+Как можно в FastAPI организовать роутинг для REST API с поддержкой как GET, так и POST запросов к einem endpoint, но с разными путями для каждого из методов?
+
+#7 score=0.847670 type=broad
+source=nova_knowledge
+q_idx=8579
+SOURCE QUESTION:
+Как можно использовать встроенную функцию документации FastAPI для автоматизации генерации API-документации по моей RESTful API?
+
+#8 score=0.845536 type=broad
+source=nova_knowledge
+q_idx=8865
+SOURCE QUESTION:
+Как можно настроить автоматическое генерацию документации в FastAPI с использованием различных форматов (OpenAPI, ReDoc) и как это может упростить разработку REST API?
+
+#9 score=0.843842 type=technical
+source=nova_technical_v1_1
+line=1254
+SOURCE QUESTION:
+Настрой запрос к API — адрес и документацию пришлю потом.
+
+#10 score=0.840447 type=broad
+source=nova_knowledge
+q_idx=12041
+SOURCE QUESTION:
+Каким образом можно в FastAPI реализовать роутинг для REST API с поддержкой подставки переменных и регулярных выражений?
+
+====================================================================================================
+QUESTION 9
+====================================================================================================
+QUERY: Что такое HTTP?
+time=0.0060s
+top10 source counts: {'technical': 10}
+
+#1 score=0.866247 type=technical
+source=nova_technical_v1_1
+line=848
+SOURCE QUESTION:
+HTTP и HTTPS: что добавляет HTTPS?
+
+#2 score=0.856978 type=technical
+source=nova_technical_v1_1
+line=698
+SOURCE QUESTION:
+Что означает идемпотентность HTTP-метода?
+
+#3 score=0.843944 type=technical
+source=nova_technical_v1_1
+line=1099
+SOURCE QUESTION:
+Что такое «HTTP header»? Объясни без кода.
+
+#4 score=0.840361 type=technical
+source=nova_technical_v1_1
+line=1098
+SOURCE QUESTION:
+Сформулируй определение «HTTP status code» и главное ограничение без кода.
+
+#5 score=0.839842 type=technical
+source=nova_technical_v1_1
+line=507
+SOURCE QUESTION:
+Составь план диагностики: Тест HTTP-клиента иногда обращается к реальной сети.
+
+#6 score=0.839259 type=technical
+source=nova_technical_v1_1
+line=208
+SOURCE QUESTION:
+Зачем HTTP-заголовок Content-Type и чем он отличается от Accept?
+
+#7 score=0.837956 type=technical
+source=nova_technical_v1_1
+line=715
+SOURCE QUESTION:
+Transport error и HTTP error — это одно и то же?
+
+#8 score=0.835720 type=technical
+source=nova_technical_v1_1
+line=409
+SOURCE QUESTION:
+Функция одновременно читает файл, преобразует данные и отправляет HTTP-запрос. Как разделить ответственность?
+
+#9 score=0.835664 type=technical
+source=nova_technical_v1_1
+line=1097
+SOURCE QUESTION:
+Какую роль играет safe HTTP method? Только концептуально.
+
+#10 score=0.835572 type=technical
+source=nova_technical_v1_1
+line=201
+SOURCE QUESTION:
+Что означает REST и какие свойства интерфейса важнее формы URL?
+
+====================================================================================================
+QUESTION 10
+====================================================================================================
+QUERY: Что такое SQL?
+time=0.0055s
+top10 source counts: {'broad': 10}
+
+#1 score=0.864389 type=broad
+source=nova_knowledge
+q_idx=4861
+SOURCE QUESTION:
+Какие способы объединения таблиц существуют в SQL и в чем их отличия?
+
+#2 score=0.859572 type=broad
+source=nova_knowledge
+q_idx=6438
+SOURCE QUESTION:
+Какие существуют способы объединения таблиц в SQL и чем они отличаются друг от друга?
+
+#3 score=0.859279 type=broad
+source=nova_knowledge
+q_idx=11561
+SOURCE QUESTION:
+Какие есть способы объединения таблиц в SQL и в чем различия между ними?
+
+#4 score=0.855611 type=broad
+source=nova_knowledge
+q_idx=9101
+SOURCE QUESTION:
+Какова цель нормализации в SQL и какие преимущества она предоставляет при управлении данными?
+
+#5 score=0.855343 type=broad
+source=nova_knowledge
+q_idx=14040
+SOURCE QUESTION:
+Какие способы объединения таблиц в SQL вы знаете и в чем их отличия?
+
+#6 score=0.854553 type=broad
+source=nova_knowledge
+q_idx=10031
+SOURCE QUESTION:
+Какова цель нормализации в SQL и какие преимущества она дает для больших баз данных?
+
+#7 score=0.853337 type=broad
+source=nova_knowledge
+q_idx=495
+SOURCE QUESTION:
+Какие методы объединения таблиц в SQL являются наиболее эффективными при работе с большими данными и как их выбрать в зависимости от типа данных и цели запроса?
+
+#8 score=0.852736 type=broad
+source=nova_knowledge
+q_idx=511
+SOURCE QUESTION:
+Какова цель нормализации SQL в контексте управления данными и каким образом нормализованная база данных может помочь в управлении большими объемами информации?
+
+#9 score=0.851106 type=broad
+source=nova_knowledge
+q_idx=11204
+SOURCE QUESTION:
+Какие существуют способы объединения нескольких таблиц в SQL, и когда они наиболее подходящи для использования?
+
+#10 score=0.850460 type=broad
+source=nova_knowledge
+q_idx=11688
+SOURCE QUESTION:
+Какие виды индексов существуют в SQL и как они влияют на производительность запросов к базе данных?
+
+====================================================================================================
+QUESTION 11
+====================================================================================================
+QUERY: Что такое Python?
+time=0.0060s
+top10 source counts: {'broad': 9, 'technical': 1}
+
+#1 score=0.852110 type=broad
+source=nova_knowledge
+q_idx=13426
+SOURCE QUESTION:
+Какие способы типизации данных в Python существуют и чем они отличаются друг от друга?
+
+#2 score=0.851513 type=broad
+source=nova_knowledge
+q_idx=5163
+SOURCE QUESTION:
+Как определить тип функции в Python?
+
+#3 score=0.850515 type=broad
+source=nova_knowledge
+q_idx=11350
+SOURCE QUESTION:
+Какие есть способы в Python работать со строками и что они из себя представляют?
+
+#4 score=0.848422 type=technical
+source=nova_technical_v1_1
+line=43
+SOURCE QUESTION:
+Что дают аннотации типов функции во время выполнения Python?
+
+#5 score=0.848224 type=broad
+source=nova_knowledge
+q_idx=9798
+SOURCE QUESTION:
+Какова разница между типизацией переменных и функциями в Python?
+
+#6 score=0.847859 type=broad
+source=nova_knowledge
+q_idx=6876
+SOURCE QUESTION:
+Какова различие между переменными и типами данных в Python?
+
+#7 score=0.847096 type=broad
+source=nova_knowledge
+q_idx=1425
+SOURCE QUESTION:
+Какой из перечисленных типов данных в Python является неизменяемым и почему?
+
+#8 score=0.846988 type=broad
+source=nova_knowledge
+q_idx=9572
+SOURCE QUESTION:
+Какие преимущества и недостатки имеет типизация в Python по сравнению с языками программирования с сильной типизацией, такой как C или Java?
+
+#9 score=0.846600 type=broad
+source=nova_knowledge
+q_idx=13287
+SOURCE QUESTION:
+Каковы ключевые различия между функциями и методами в Python?
+
+#10 score=0.846291 type=broad
+source=nova_knowledge
+q_idx=5260
+SOURCE QUESTION:
+Какова разница между типизацией переменной и типизацией функции в Python? Какие преимущества имеет типизация в Python по сравнению с языками программирования без типизации, например, JavaScript?
+
+====================================================================================================
+QUESTION 12
+====================================================================================================
+QUERY: Что такое Docker?
+time=0.0055s
+top10 source counts: {'technical': 2, 'broad': 8}
+
+#1 score=0.864211 type=technical
+source=nova_technical_v1_1
+line=256
+SOURCE QUESTION:
+Чем Docker image отличается от container?
+
+#2 score=0.858232 type=broad
+source=nova_knowledge
+q_idx=2278
+SOURCE QUESTION:
+Какие шаги необходимо предпринять для создания Dockerfile для многоконтейнерного приложения, которое состоит из трёх независимых контейнеров: веб-сервера, базы данных и кэша, и как можно затем запусти
+
+#3 score=0.858022 type=broad
+source=nova_knowledge
+q_idx=9847
+SOURCE QUESTION:
+Какие существуют способы связи контейнеров Docker друг с другом и чем они различаются?
+
+#4 score=0.856940 type=broad
+source=nova_knowledge
+q_idx=6480
+SOURCE QUESTION:
+Какова разница между использованием Docker для запуска веб-приложения на локальной машине разработчика и его развертывания в производственной среде с помощью Docker?
+
+#5 score=0.856725 type=technical
+source=nova_technical_v1_1
+line=267
+SOURCE QUESTION:
+Чем docker stop отличается от docker kill?
+
+#6 score=0.853642 type=broad
+source=nova_knowledge
+q_idx=11959
+SOURCE QUESTION:
+Каковы основные отличия между Docker и классическими виртуальными машинами в плане масштабирования, ресурсов и изоляции приложений?
+
+#7 score=0.853121 type=broad
+source=nova_knowledge
+q_idx=3922
+SOURCE QUESTION:
+Как можно использовать docker-compose для автоматизации развёртывания и управления масштабируемой системой, состоящей из нескольких контейнеров с разными службами, такими как веб-сервер, базы данных и
+
+#8 score=0.851400 type=broad
+source=nova_knowledge
+q_idx=9615
+SOURCE QUESTION:
+Какова разница между образами Docker и контейнерами, и почему это важно при выборе подходящего решения для вашего проекта?
+
+#9 score=0.850741 type=broad
+source=nova_knowledge
+q_idx=12894
+SOURCE QUESTION:
+Какие способы существуют для связи контейнеров Docker между собой через виртуальную сеть и какова их разница в плане производительности и безопасности?
+
+#10 score=0.850158 type=broad
+source=nova_knowledge
+q_idx=7836
+SOURCE QUESTION:
+Как можно настроить Docker так, чтобы он позволял доступ к веб-приложению из интернета через NAT на хосте, но также позволял доступ к базам данных в контейнерах из других контейнеров на той же сети хо
+
+====================================================================================================
+Total time: 0.25s
+====================================================================================================

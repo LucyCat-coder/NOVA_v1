@@ -1,0 +1,51 @@
+{
+  "status": "PREPARED_WITH_LIMITED_AUDIT",
+  "source_unchanged": true,
+  "counts_before": {
+    "full": 1400,
+    "train": 1260,
+    "val": 140
+  },
+  "counts_after": {
+    "full": 1398,
+    "train": 1258,
+    "val": 140
+  },
+  "excluded": {
+    "tech_804": "Semantic overlap with bench_001",
+    "tech_824": "Semantic overlap with bench_045"
+  },
+  "split_preserved": true,
+  "retained_records_and_metadata_unchanged": true,
+  "normalized_exact_duplicates": {
+    "full": 0,
+    "train": 0,
+    "val": 0
+  },
+  "normalized_exact_overlap": {
+    "train_val": [],
+    "train_benchmark": [],
+    "val_benchmark": []
+  },
+  "format_warning_count": 0,
+  "format_warnings": [],
+  "sha256_sources": {
+    "full": "ef32a14700014704313981c699d103e4ca1520fb241dfc662fb8a921e0772db2",
+    "train": "32610e7950a564e1362b5332b7af4bb883de2cab9d9df12769b965b17bdbd18f",
+    "val": "2ca505757f40e6855598021c2d93cf3d1aea27e4e6809b24bbcec0d3b34f9ecd",
+    "benchmark": "35905a469fcd35097c2575c9976b3ed84dfa861287bae4ab7a5662a5e62904f2",
+    "loader": "d2e8bf11d416074cfee3f572776dbd11fd276d789e909501e1692cf5fe366da9",
+    "builder": "82830b3b80bccb73ead61bbc97bc4211663792e15cecb1478bd4d61d12b179c8"
+  },
+  "sha256_prepared": {
+    "full": "21c26864181f0dd455ed4f64a7640fb8d4804f2d4779ec9f851f38375d4c8485",
+    "train": "30626160933dfe40bdb4832d5fc36536bbaf1870d6b0f513772f25d8e77519ec",
+    "val": "2ca505757f40e6855598021c2d93cf3d1aea27e4e6809b24bbcec0d3b34f9ecd"
+  },
+  "limitations": [
+    "Only two known semantic overlaps were excluded; other semantic overlaps may remain.",
+    "No full technical correctness or answer completeness review was performed.",
+    "Formatting warnings are candidates, not automatic proof of malformed content.",
+    "No training, generation, checkpoint editing or benchmark modification performed."
+  ]
+}

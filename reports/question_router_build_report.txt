@@ -1,0 +1,24 @@
+NOVA QUESTION ROUTER BUILD REPORT
+================================================================================
+
+BROAD source: G:\NOVA\NOVA_project_NEW\rag\knowledge_index_v2.jsonl
+BROAD SHA-256: 7914306d8d8d1204e04cdd5d26d9c03ee5146c0ccb37a5cf362ef40c5bf259b2
+
+TECHNICAL source: G:\NOVA\NOVA_project_NEW\rag\technical_index.jsonl
+TECHNICAL SHA-256: 938c9648971584c3c2ac34609bef7cc37ef988810f97093ada87c6065c9d3aea
+
+Model: intfloat/multilingual-e5-small
+Pooling: masked_mean
+Embedding: source question ONLY
+
+BROAD questions: 15000
+TECHNICAL questions: 1398
+TOTAL questions: 16398
+
+Embedding dimension: 384
+
+FAISS: G:\NOVA\NOVA_project_NEW\rag\question_router.faiss
+JSONL: G:\NOVA\NOVA_project_NEW\rag\question_router.jsonl
+
+Embedding time: 3.5s
+Total time: 7.5s

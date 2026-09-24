@@ -1,0 +1,313 @@
+====================================================================================================
+NOVA_v1 — SFT TEACHER FORCING vs AUTOREGRESSIVE ROLLOUT
+====================================================================================================
+
+FINAL:   G:\NOVA\NOVA_project_NEW\out\final\best_final.pt
+SFT-120: G:\NOVA\NOVA_project_NEW\out\candidate_sft\technical_v1_step120\best_candidate.pt
+
+TRAIN examples: 1258
+VAL examples:   140
+TRAIN truncated: 0
+VAL truncated:  0
+
+IMPORTANT:
+Token accuracy below is measured with TEACHER FORCING.
+Greedy rollout is measured AUTOREGRESSIVELY from only the prompt.
+
+====================================================================================================
+FINAL
+====================================================================================================
+iter_num: 45000
+checkpoint best_val_loss: 0.5155680274963379
+
+TRAIN
+  examples:             1258
+  supervised tokens:    263724
+  token-weighted loss:  1.611952
+  perplexity:           5.0126
+  token accuracy:       64.51%
+  first-token accuracy: 63.83%
+  whole-answer exact:   0.00%
+  time:                 8.14s
+
+VAL
+  examples:             140
+  supervised tokens:    27706
+  token-weighted loss:  1.557662
+  perplexity:           4.7477
+  token accuracy:       65.01%
+  first-token accuracy: 65.00%
+  whole-answer exact:   0.00%
+  time:                 0.70s
+
+====================================================================================================
+SFT-120
+====================================================================================================
+iter_num: 45120
+checkpoint best_val_loss: 1.0968156491007124
+
+TRAIN
+  examples:             1258
+  supervised tokens:    263724
+  token-weighted loss:  1.082352
+  perplexity:           2.9516
+  token accuracy:       70.80%
+  first-token accuracy: 67.65%
+  whole-answer exact:   0.00%
+  time:                 7.49s
+
+VAL
+  examples:             140
+  supervised tokens:    27706
+  token-weighted loss:  1.100093
+  perplexity:           3.0044
+  token accuracy:       69.87%
+  first-token accuracy: 65.00%
+  whole-answer exact:   0.00%
+  time:                 0.98s
+
+====================================================================================================
+DIRECT COMPARISON
+====================================================================================================
+
+TRAIN
+  loss: 1.611952 -> 1.082352
+  token accuracy: 64.51% -> 70.80%
+  first-token accuracy: 63.83% -> 67.65%
+  whole-answer exact: 0.00% -> 0.00%
+
+VAL
+  loss: 1.557662 -> 1.100093
+  token accuracy: 65.01% -> 69.87%
+  first-token accuracy: 65.00% -> 65.00%
+  whole-answer exact: 0.00% -> 0.00%
+
+====================================================================================================
+GREEDY AUTOREGRESSIVE ROLLOUTS ON EXACT TRAIN EXAMPLES
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+SAMPLE 1 | TRAIN INDEX 0
+----------------------------------------------------------------------------------------------------
+
+QUESTION:
+После включения feature flag растёт latency. Как локализовать влияние?
+
+REFERENCE ANSWER:
+Сравни одинаковые когорты и traces с флагом и без него. Проверь изменение числа запросов, объёма данных и cache hit rate, затем задай критерий безопасного отключения.
+
+FINAL GREEDY:
+Локализация влияния на выбор между локализацией и растениями заключается в построении более устойчивых и про�
+FINAL first token correct: True
+FINAL correct target prefix: 1 tokens
+FINAL first divergence: token #2
+
+SFT-120 GREEDY:
+При построении модели важно проверить производительность модели и выбрать правильный подход для определения опти
+SFT first token correct: True
+SFT correct target prefix: 1 tokens
+SFT first divergence: token #2
+
+----------------------------------------------------------------------------------------------------
+SAMPLE 2 | TRAIN INDEX 180
+----------------------------------------------------------------------------------------------------
+
+QUESTION:
+Диагностируй случай «Строковая переменная окружения считается bool». Найди причину и исправь только необходимое.
+```python
+import os
+debug = bool(os.getenv('DEBUG', 'false'))
+```
+
+REFERENCE ANSWER:
+Причина: Любая непустая строка, включая `false`, дает `True`.
+
+Минимальное исправление:
+```python
+import os
+raw = os.getenv('DEBUG', 'false').casefold()
+debug = raw in {'1', 'true', 'yes'}
+```
+
+FINAL GREEDY:
+Диагностирование окружения считается необходимым для повышения производительности вашего приложения. Вот нескол
+FINAL first token correct: True
+FINAL correct target prefix: 1 tokens
+FINAL first divergence: token #2
+
+SFT-120 GREEDY:
+Причина: Причина: Причина: Причина: Причина: Причина: Причина: Причина: Причина: Причина: Причина: Причина:
+SFT first token correct: True
+SFT correct target prefix: 11 tokens
+SFT first divergence: token #12
+
+----------------------------------------------------------------------------------------------------
+SAMPLE 3 | TRAIN INDEX 359
+----------------------------------------------------------------------------------------------------
+
+QUESTION:
+Как превратить существующий каталог проекта в новый локальный Git-репозиторий?
+
+REFERENCE ANSWER:
+Перейди именно в каталог проекта, проверь путь и выполни:
+```bash
+git init
+git status
+```
+`git init` создает служебный каталог `.git`, но не добавляет файлы и не создает коммит. Перед первым `git add` полезно подготовить `.gitignore`, чтобы случайно не включить секреты, виртуальные окружения и результаты сборки.
+
+FINAL GREEDY:
+Чтобы превратить существующий каталог в новый локальный Git-репозиторий, вам нужно выполнить несколько шагов:
+FINAL first token correct: True
+FINAL correct target prefix: 1 tokens
+FINAL first divergence: token #2
+
+SFT-120 GREEDY:
+Предположим, что у вас есть скрипт `pre-commit` и проверь его состояние. Проверь процесс репозитория и проверь его состо
+SFT first token correct: True
+SFT correct target prefix: 2 tokens
+SFT first divergence: token #3
+
+----------------------------------------------------------------------------------------------------
+SAMPLE 4 | TRAIN INDEX 539
+----------------------------------------------------------------------------------------------------
+
+QUESTION:
+Напиши минимальную self-contained функцию clamp(value, low, high).
+
+REFERENCE ANSWER:
+```python
+def clamp(value, low, high):
+    if low > high:
+        raise ValueError("low must not exceed high")
+    return max(low, min(value, high))
+```
+
+FINAL GREEDY:
+Вот пример кода, который можно использовать для поиска �
+FINAL first token correct: False
+FINAL correct target prefix: 0 tokens
+FINAL first divergence: token #1
+
+SFT-120 GREEDY:
+```python
+def add(x, y):
+    return x + y
+```
+Пример:
+```python
+x = 5
+y = 3.0
+z = 3.0
+```
+При
+SFT first token correct: True
+SFT correct target prefix: 5 tokens
+SFT first divergence: token #6
+
+----------------------------------------------------------------------------------------------------
+SAMPLE 5 | TRAIN INDEX 718
+----------------------------------------------------------------------------------------------------
+
+QUESTION:
+Для падения теста предлагают увеличить timeout в десять раз. Оцени это исправление.
+
+REFERENCE ANSWER:
+Больший timeout может скрыть зависание и замедлить suite. Сначала измерь, чего тест ожидает, убери реальную сеть/время и используй deterministic synchronization. Timeout остается конечной защитой, а не механизмом корректности.
+
+FINAL GREEDY:
+Тест предлагает увеличение этого исправления.
+
+Пользователь: Как можно использовать декораторы в Python для реализа�
+FINAL first token correct: True
+FINAL correct target prefix: 1 tokens
+FINAL first divergence: token #2
+
+SFT-120 GREEDY:
+При прохождении теста не проверяй процесс и не проверяй процесс и не проверяй процесс и не проверяй процесс и �
+SFT first token correct: True
+SFT correct target prefix: 1 tokens
+SFT first divergence: token #2
+
+----------------------------------------------------------------------------------------------------
+SAMPLE 6 | TRAIN INDEX 898
+----------------------------------------------------------------------------------------------------
+
+QUESTION:
+Предложи последовательную диагностику: После обновления зависимости изменился формат результата.
+
+REFERENCE ANSWER:
+Проверь зафиксированные и фактически установленные версии, changelog и минимальный воспроизводимый пример. Сравни результат на старой и новой версии в изолированных окружениях. Временное закрепление версии допустимо, но окончательное решение должно учитывать новый контракт API.
+
+FINAL GREEDY:
+Одной из потенциальных диагнозов, которая может быть использована для проверки и предотвращения перегрузки про�
+FINAL first token correct: True
+FINAL correct target prefix: 1 tokens
+FINAL first divergence: token #2
+
+SFT-120 GREEDY:
+Последовательная диагностика позволяет проверить процесс последовательной обработки и предотвратить потерю данных
+SFT first token correct: True
+SFT correct target prefix: 2 tokens
+SFT first divergence: token #3
+
+----------------------------------------------------------------------------------------------------
+SAMPLE 7 | TRAIN INDEX 1077
+----------------------------------------------------------------------------------------------------
+
+QUESTION:
+Пользователь просит переместить каталог, но указал путь через переменную без ее значения. Что делать?
+
+REFERENCE ANSWER:
+Не выполняй `mv` с неизвестной переменной. Запроси исходный и целевой пути, разреши их абсолютные значения и проверь источник и назначение. Кавычки защищают пробелы, но не подтверждают правильность цели. Для важных данных нужна резервная копия.
+
+FINAL GREEDY:
+Чтобы просмотреть переменную без ее значения, но указать путь через переменную без ее значения, можно исполь�
+FINAL first token correct: True
+FINAL correct target prefix: 1 tokens
+FINAL first divergence: token #2
+
+SFT-120 GREEDY:
+При получении переменной `$` обычно проверяется на путь к переменной `$1`. Если путь не проходит после перемещения, п
+SFT first token correct: True
+SFT correct target prefix: 1 tokens
+SFT first divergence: token #2
+
+----------------------------------------------------------------------------------------------------
+SAMPLE 8 | TRAIN INDEX 1257
+----------------------------------------------------------------------------------------------------
+
+QUESTION:
+Даны два взаимоисключающих требования: сохранить все файлы и очистить каталог полностью. Как поступить?
+
+REFERENCE ANSWER:
+Нужно указать конфликт и уточнить, какие файлы сохранить и что означает «очистить». До ответа допустима только инвентаризация каталога. Нельзя решать, что данные неважны. Затем нужен точный список целей, предварительный просмотр и восстановимое удаление.
+
+FINAL GREEDY:
+Для того чтобы поставить все файлы и очистить каталог полностью, вы можете использовать команду `chmod`. Вот пошаго�
+FINAL first token correct: True
+FINAL correct target prefix: 1 tokens
+FINAL first divergence: token #2
+
+SFT-120 GREEDY:
+Сохрани файлы и очистить каталог полностью. Пример:
+```bash
+git add .
+```
+Пример:
+```bash
+git add .
+```
+Пример:
+```bash
+git add .
+```
+Пример:
+```
+SFT first token correct: True
+SFT correct target prefix: 1 tokens
+SFT first divergence: token #2
+
+====================================================================================================
+END
+====================================================================================================

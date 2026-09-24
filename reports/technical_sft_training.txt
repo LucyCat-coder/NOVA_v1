@@ -1,0 +1,58 @@
+========================================================================================
+NOVA TECHNICAL ASSISTANT-ONLY SFT
+========================================================================================
+
+Base checkpoint: G:\NOVA\NOVA_project_NEW\out\final\best_final.pt
+Base iter_num: 45000
+Architecture: TIED
+Train examples: 1258
+Val examples: 140
+Batch size: 4
+Gradient accumulation: 8
+Effective batch: 32
+Learning rate: 1e-05
+Max steps: 120
+Ignore index: -100
+Baseline val loss: 1.561062
+
+step=1 train_loss=1.543001 grad_norm=1.772543 step_time=0.409s
+step=5 train_loss=1.560105 grad_norm=1.754536 step_time=0.340s
+step=10 train_loss=1.479032 grad_norm=1.475555 step_time=0.315s
+step=15 train_loss=1.379522 grad_norm=1.309188 step_time=0.317s
+step=20 train_loss=1.367640 grad_norm=1.145508 step_time=0.316s
+step=20 val_loss=1.292469 improved=True
+step=25 train_loss=1.391117 grad_norm=1.077515 step_time=0.325s
+step=30 train_loss=1.267420 grad_norm=0.992123 step_time=0.315s
+step=35 train_loss=1.379363 grad_norm=0.994070 step_time=0.315s
+step=40 train_loss=1.219056 grad_norm=0.916797 step_time=0.303s
+step=40 val_loss=1.201218 improved=True
+step=45 train_loss=1.270282 grad_norm=0.889701 step_time=0.317s
+step=50 train_loss=1.243271 grad_norm=0.913026 step_time=0.318s
+step=55 train_loss=1.334011 grad_norm=0.839026 step_time=0.316s
+step=60 train_loss=1.150835 grad_norm=0.759109 step_time=0.316s
+step=60 val_loss=1.161714 improved=True
+step=65 train_loss=1.290283 grad_norm=0.853308 step_time=0.317s
+step=70 train_loss=1.281697 grad_norm=0.779922 step_time=0.317s
+step=75 train_loss=1.305220 grad_norm=0.824567 step_time=0.318s
+step=80 train_loss=1.132374 grad_norm=0.728906 step_time=0.314s
+step=80 val_loss=1.134289 improved=True
+step=85 train_loss=1.143501 grad_norm=0.717130 step_time=0.320s
+step=90 train_loss=1.216991 grad_norm=0.855962 step_time=0.331s
+step=95 train_loss=1.197985 grad_norm=0.777424 step_time=0.315s
+step=100 train_loss=1.168566 grad_norm=0.799132 step_time=0.317s
+step=100 val_loss=1.113712 improved=True
+step=105 train_loss=1.145152 grad_norm=0.753524 step_time=0.316s
+step=110 train_loss=1.194270 grad_norm=0.761661 step_time=0.314s
+step=115 train_loss=1.106669 grad_norm=0.714921 step_time=0.314s
+step=120 train_loss=1.088855 grad_norm=0.681431 step_time=0.316s
+step=120 val_loss=1.096816 improved=True
+
+========================================================================================
+SUMMARY
+========================================================================================
+Baseline val loss: 1.561062
+Best val loss: 1.096816
+Final val loss: 1.096816
+Total time: 53.26s
+Best checkpoint: G:\NOVA\NOVA_project_NEW\out\candidate_sft\technical_v1\best_candidate.pt
+Last checkpoint: G:\NOVA\NOVA_project_NEW\out\candidate_sft\technical_v1\last_candidate.pt

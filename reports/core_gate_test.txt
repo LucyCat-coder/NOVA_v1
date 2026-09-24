@@ -1,0 +1,461 @@
+====================================================================================================
+NOVA CORE GATE TEST
+====================================================================================================
+
+Goal:
+  measure positive paraphrases
+  measure unrelated/OOD queries
+  inspect TOP1 score + TOP1/TOP2 margin
+
+====================================================================================================
+POSITIVE PARAPHRASES
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+POSITIVE 1
+QUERY: TCP надёжный, а UDP нет — в чём между ними реальная разница?
+EXPECTED: core_tcp_udp
+RESULT: PASS
+TOP1_ID: core_tcp_udp
+TOP1_SCORE: 0.900972
+TOP2_SCORE: 0.806323
+MARGIN: 0.094649
+
+#1 score=0.900972 id=core_tcp_udp
+question: Что такое TCP и чем он отличается от UDP?
+
+#2 score=0.806323 id=core_http
+question: Что такое HTTP?
+
+#3 score=0.803814 id=core_docker_vm
+question: Чем Docker-контейнер отличается от виртуальной машины?
+
+----------------------------------------------------------------------------------------------------
+POSITIVE 2
+QUERY: Контейнер Docker и обычная VM используют систему одинаково или нет?
+EXPECTED: core_docker_vm
+RESULT: PASS
+TOP1_ID: core_docker_vm
+TOP1_SCORE: 0.871702
+TOP2_SCORE: 0.812134
+MARGIN: 0.059568
+
+#1 score=0.871702 id=core_docker_vm
+question: Чем Docker-контейнер отличается от виртуальной машины?
+
+#2 score=0.812134 id=core_docker
+question: Что такое Docker?
+
+#3 score=0.768857 id=core_tcp_udp
+question: Что такое TCP и чем он отличается от UDP?
+
+----------------------------------------------------------------------------------------------------
+POSITIVE 3
+QUERY: Почему список в default-аргументе функции Python сохраняет изменения между вызовами?
+EXPECTED: core_python_mutable_default
+RESULT: PASS
+TOP1_ID: core_python_mutable_default
+TOP1_SCORE: 0.893389
+TOP2_SCORE: 0.816197
+MARGIN: 0.077192
+
+#1 score=0.893389 id=core_python_mutable_default
+question: Почему нельзя использовать изменяемый объект как значение аргумента по умолчанию в Python?
+
+#2 score=0.816197 id=core_python
+question: Что такое Python?
+
+#3 score=0.811656 id=core_pandas_missing
+question: Как заполнить пропущенные значения в pandas DataFrame?
+
+----------------------------------------------------------------------------------------------------
+POSITIVE 4
+QUERY: Merge сохраняет историю, а rebase переписывает? Объясни различие.
+EXPECTED: core_git_merge_rebase
+RESULT: PASS
+TOP1_ID: core_git_merge_rebase
+TOP1_SCORE: 0.875901
+TOP2_SCORE: 0.805807
+MARGIN: 0.070095
+
+#1 score=0.875901 id=core_git_merge_rebase
+question: В чем разница между git merge и git rebase?
+
+#2 score=0.805807 id=core_database_index
+question: Как работает индекс в базе данных?
+
+#3 score=0.795166 id=core_postgresql
+question: Что такое PostgreSQL?
+
+----------------------------------------------------------------------------------------------------
+POSITIVE 5
+QUERY: Чем в pandas лучше заменить NaN в колонке?
+EXPECTED: core_pandas_missing
+RESULT: PASS
+TOP1_ID: core_pandas_missing
+TOP1_SCORE: 0.874586
+TOP2_SCORE: 0.826261
+MARGIN: 0.048325
+
+#1 score=0.874586 id=core_pandas_missing
+question: Как заполнить пропущенные значения в pandas DataFrame?
+
+#2 score=0.826261 id=core_python_mutable_default
+question: Почему нельзя использовать изменяемый объект как значение аргумента по умолчанию в Python?
+
+#3 score=0.810482 id=core_database_index
+question: Как работает индекс в базе данных?
+
+----------------------------------------------------------------------------------------------------
+POSITIVE 6
+QUERY: Postgres — это язык, база данных или СУБД?
+EXPECTED: core_postgresql
+RESULT: PASS
+TOP1_ID: core_postgresql
+TOP1_SCORE: 0.864569
+TOP2_SCORE: 0.840399
+MARGIN: 0.024170
+
+#1 score=0.864569 id=core_postgresql
+question: Что такое PostgreSQL?
+
+#2 score=0.840399 id=core_sql
+question: Что такое SQL?
+
+#3 score=0.836725 id=core_database_index
+question: Как работает индекс в базе данных?
+
+----------------------------------------------------------------------------------------------------
+POSITIVE 7
+QUERY: Зачем таблице базы данных нужен индекс и какой у него минус?
+EXPECTED: core_database_index
+RESULT: PASS
+TOP1_ID: core_database_index
+TOP1_SCORE: 0.894879
+TOP2_SCORE: 0.829380
+MARGIN: 0.065499
+
+#1 score=0.894879 id=core_database_index
+question: Как работает индекс в базе данных?
+
+#2 score=0.829380 id=core_sql
+question: Что такое SQL?
+
+#3 score=0.808505 id=core_pandas_missing
+question: Как заполнить пропущенные значения в pandas DataFrame?
+
+----------------------------------------------------------------------------------------------------
+POSITIVE 8
+QUERY: REST — это просто HTTP с JSON или что-то другое?
+EXPECTED: core_rest_api
+RESULT: PASS
+TOP1_ID: core_rest_api
+TOP1_SCORE: 0.865933
+TOP2_SCORE: 0.855870
+MARGIN: 0.010063
+
+#1 score=0.865933 id=core_rest_api
+question: Что такое REST API?
+
+#2 score=0.855870 id=core_http
+question: Что такое HTTP?
+
+#3 score=0.797105 id=core_python
+question: Что такое Python?
+
+----------------------------------------------------------------------------------------------------
+POSITIVE 9
+QUERY: Как устроен обмен запросом и ответом в HTTP?
+EXPECTED: core_http
+RESULT: PASS
+TOP1_ID: core_http
+TOP1_SCORE: 0.850382
+TOP2_SCORE: 0.804816
+MARGIN: 0.045566
+
+#1 score=0.850382 id=core_http
+question: Что такое HTTP?
+
+#2 score=0.804816 id=core_rest_api
+question: Что такое REST API?
+
+#3 score=0.789537 id=core_database_index
+question: Как работает индекс в базе данных?
+
+----------------------------------------------------------------------------------------------------
+POSITIVE 10
+QUERY: Для чего нужен язык SQL в реляционной базе?
+EXPECTED: core_sql
+RESULT: PASS
+TOP1_ID: core_sql
+TOP1_SCORE: 0.865926
+TOP2_SCORE: 0.845664
+MARGIN: 0.020262
+
+#1 score=0.865926 id=core_sql
+question: Что такое SQL?
+
+#2 score=0.845664 id=core_database_index
+question: Как работает индекс в базе данных?
+
+#3 score=0.811432 id=core_postgresql
+question: Что такое PostgreSQL?
+
+----------------------------------------------------------------------------------------------------
+POSITIVE 11
+QUERY: Python — что это за язык программирования?
+EXPECTED: core_python
+RESULT: PASS
+TOP1_ID: core_python
+TOP1_SCORE: 0.875714
+TOP2_SCORE: 0.817757
+MARGIN: 0.057957
+
+#1 score=0.875714 id=core_python
+question: Что такое Python?
+
+#2 score=0.817757 id=core_python_mutable_default
+question: Почему нельзя использовать изменяемый объект как значение аргумента по умолчанию в Python?
+
+#3 score=0.810555 id=core_sql
+question: Что такое SQL?
+
+----------------------------------------------------------------------------------------------------
+POSITIVE 12
+QUERY: Для чего вообще используется Docker?
+EXPECTED: core_docker
+RESULT: PASS
+TOP1_ID: core_docker
+TOP1_SCORE: 0.851452
+TOP2_SCORE: 0.834531
+MARGIN: 0.016921
+
+#1 score=0.851452 id=core_docker
+question: Что такое Docker?
+
+#2 score=0.834531 id=core_docker_vm
+question: Чем Docker-контейнер отличается от виртуальной машины?
+
+#3 score=0.784288 id=core_postgresql
+question: Что такое PostgreSQL?
+
+
+====================================================================================================
+NEGATIVE / OUT-OF-DOMAIN
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+NEGATIVE 1
+QUERY: Как приготовить борщ?
+TOP1_ID: core_http
+TOP1_SCORE: 0.762050
+TOP2_SCORE: 0.757196
+MARGIN: 0.004854
+
+#1 score=0.762050 id=core_http
+question: Что такое HTTP?
+
+#2 score=0.757196 id=core_pandas_missing
+question: Как заполнить пропущенные значения в pandas DataFrame?
+
+#3 score=0.747916 id=core_docker
+question: Что такое Docker?
+
+----------------------------------------------------------------------------------------------------
+NEGATIVE 2
+QUERY: Сколько будет 17 умножить на 23?
+TOP1_ID: core_database_index
+TOP1_SCORE: 0.770018
+TOP2_SCORE: 0.769275
+MARGIN: 0.000743
+
+#1 score=0.770018 id=core_database_index
+question: Как работает индекс в базе данных?
+
+#2 score=0.769275 id=core_python_mutable_default
+question: Почему нельзя использовать изменяемый объект как значение аргумента по умолчанию в Python?
+
+#3 score=0.763676 id=core_pandas_missing
+question: Как заполнить пропущенные значения в pandas DataFrame?
+
+----------------------------------------------------------------------------------------------------
+NEGATIVE 3
+QUERY: Почему небо голубое?
+TOP1_ID: core_sql
+TOP1_SCORE: 0.735627
+TOP2_SCORE: 0.735159
+MARGIN: 0.000468
+
+#1 score=0.735627 id=core_sql
+question: Что такое SQL?
+
+#2 score=0.735159 id=core_python
+question: Что такое Python?
+
+#3 score=0.733104 id=core_database_index
+question: Как работает индекс в базе данных?
+
+----------------------------------------------------------------------------------------------------
+NEGATIVE 4
+QUERY: Как заменить колесо на автомобиле?
+TOP1_ID: core_python_mutable_default
+TOP1_SCORE: 0.773201
+TOP2_SCORE: 0.766319
+MARGIN: 0.006881
+
+#1 score=0.773201 id=core_python_mutable_default
+question: Почему нельзя использовать изменяемый объект как значение аргумента по умолчанию в Python?
+
+#2 score=0.766319 id=core_docker
+question: Что такое Docker?
+
+#3 score=0.756084 id=core_http
+question: Что такое HTTP?
+
+----------------------------------------------------------------------------------------------------
+NEGATIVE 5
+QUERY: Напиши короткое поздравление с днем рождения.
+TOP1_ID: core_docker
+TOP1_SCORE: 0.780750
+TOP2_SCORE: 0.779955
+MARGIN: 0.000795
+
+#1 score=0.780750 id=core_docker
+question: Что такое Docker?
+
+#2 score=0.779955 id=core_python
+question: Что такое Python?
+
+#3 score=0.768825 id=core_rest_api
+question: Что такое REST API?
+
+----------------------------------------------------------------------------------------------------
+NEGATIVE 6
+QUERY: Как работает квантовая запутанность?
+TOP1_ID: core_docker_vm
+TOP1_SCORE: 0.773761
+TOP2_SCORE: 0.762908
+MARGIN: 0.010852
+
+#1 score=0.773761 id=core_docker_vm
+question: Чем Docker-контейнер отличается от виртуальной машины?
+
+#2 score=0.762908 id=core_pandas_missing
+question: Как заполнить пропущенные значения в pandas DataFrame?
+
+#3 score=0.757736 id=core_python_mutable_default
+question: Почему нельзя использовать изменяемый объект как значение аргумента по умолчанию в Python?
+
+----------------------------------------------------------------------------------------------------
+NEGATIVE 7
+QUERY: Какая столица Австралии?
+TOP1_ID: core_rest_api
+TOP1_SCORE: 0.724929
+TOP2_SCORE: 0.716142
+MARGIN: 0.008788
+
+#1 score=0.724929 id=core_rest_api
+question: Что такое REST API?
+
+#2 score=0.716142 id=core_http
+question: Что такое HTTP?
+
+#3 score=0.710849 id=core_sql
+question: Что такое SQL?
+
+----------------------------------------------------------------------------------------------------
+NEGATIVE 8
+QUERY: Как настроить nginx reverse proxy с двумя upstream серверами?
+TOP1_ID: core_pandas_missing
+TOP1_SCORE: 0.790060
+TOP2_SCORE: 0.785107
+MARGIN: 0.004953
+
+#1 score=0.790060 id=core_pandas_missing
+question: Как заполнить пропущенные значения в pandas DataFrame?
+
+#2 score=0.785107 id=core_tcp_udp
+question: Что такое TCP и чем он отличается от UDP?
+
+#3 score=0.782211 id=core_rest_api
+question: Что такое REST API?
+
+----------------------------------------------------------------------------------------------------
+NEGATIVE 9
+QUERY: Почему CUDA kernel получает out of memory?
+TOP1_ID: core_python_mutable_default
+TOP1_SCORE: 0.808870
+TOP2_SCORE: 0.795556
+MARGIN: 0.013314
+
+#1 score=0.808870 id=core_python_mutable_default
+question: Почему нельзя использовать изменяемый объект как значение аргумента по умолчанию в Python?
+
+#2 score=0.795556 id=core_pandas_missing
+question: Как заполнить пропущенные значения в pandas DataFrame?
+
+#3 score=0.790900 id=core_database_index
+question: Как работает индекс в базе данных?
+
+----------------------------------------------------------------------------------------------------
+NEGATIVE 10
+QUERY: Как реализовать бинарное дерево поиска на C++?
+TOP1_ID: core_pandas_missing
+TOP1_SCORE: 0.803249
+TOP2_SCORE: 0.800707
+MARGIN: 0.002542
+
+#1 score=0.803249 id=core_pandas_missing
+question: Как заполнить пропущенные значения в pandas DataFrame?
+
+#2 score=0.800707 id=core_database_index
+question: Как работает индекс в базе данных?
+
+#3 score=0.799509 id=core_http
+question: Что такое HTTP?
+
+----------------------------------------------------------------------------------------------------
+NEGATIVE 11
+QUERY: Что такое Kubernetes StatefulSet?
+TOP1_ID: core_rest_api
+TOP1_SCORE: 0.787525
+TOP2_SCORE: 0.775665
+MARGIN: 0.011860
+
+#1 score=0.787525 id=core_rest_api
+question: Что такое REST API?
+
+#2 score=0.775665 id=core_docker
+question: Что такое Docker?
+
+#3 score=0.775108 id=core_sql
+question: Что такое SQL?
+
+----------------------------------------------------------------------------------------------------
+NEGATIVE 12
+QUERY: Как работает OAuth 2.0 authorization code flow?
+TOP1_ID: core_rest_api
+TOP1_SCORE: 0.789327
+TOP2_SCORE: 0.780697
+MARGIN: 0.008630
+
+#1 score=0.789327 id=core_rest_api
+question: Что такое REST API?
+
+#2 score=0.780697 id=core_http
+question: Что такое HTTP?
+
+#3 score=0.774379 id=core_database_index
+question: Как работает индекс в базе данных?
+
+
+====================================================================================================
+SUMMARY
+====================================================================================================
+Positive TOP1 accuracy: 12/12
+Positive TOP1 score: min=0.850382, max=0.900972
+Positive margin: min=0.010063, max=0.094649
+Negative TOP1 score: min=0.724929, max=0.808870
+Negative margin: min=0.000468, max=0.013314
+Total time: 0.31s
+====================================================================================================

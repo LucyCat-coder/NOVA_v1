@@ -1,0 +1,21 @@
+NOVA TECHNICAL RAG BUILD REPORT
+================================================================================
+
+Source: G:\NOVA\NOVA_project_NEW\data\nova_technical_v1_1\nova_technical_v1_1_prepared.jsonl
+Source SHA-256: 21c26864181f0dd455ed4f64a7640fb8d4804f2d4779ec9f851f38375d4c8485
+
+Model: intfloat/multilingual-e5-small
+Pooling: masked_mean
+
+Embedding format:
+  Вопрос: <question>
+  Ответ: <answer>
+
+Records: 1398
+Embedding dimension: 384
+
+FAISS: G:\NOVA\NOVA_project_NEW\rag\technical_index.faiss
+JSONL: G:\NOVA\NOVA_project_NEW\rag\technical_index.jsonl
+
+Embedding time: 0.9s
+Total time: 4.3s

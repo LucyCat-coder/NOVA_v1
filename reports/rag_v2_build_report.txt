@@ -1,0 +1,21 @@
+NOVA RAG V2 BUILD REPORT
+================================================================================
+
+Source: G:\NOVA\NOVA_project_NEW\rag\knowledge_index.jsonl
+Source SHA-256: 7914306d8d8d1204e04cdd5d26d9c03ee5146c0ccb37a5cf362ef40c5bf259b2
+
+Model: intfloat/multilingual-e5-small
+Pooling: masked_mean
+Embedding format:
+  Вопрос: <question>
+  Ответ: <chunk>
+
+Records: 77900
+Missing question metadata: 0
+Embedding dimension: 384
+
+Output FAISS: G:\NOVA\NOVA_project_NEW\rag\knowledge_index_v2.faiss
+Output JSONL: G:\NOVA\NOVA_project_NEW\rag\knowledge_index_v2.jsonl
+
+Embedding time: 84.0s
+Total time: 89.7s

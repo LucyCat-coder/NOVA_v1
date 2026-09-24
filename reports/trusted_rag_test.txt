@@ -1,0 +1,893 @@
+====================================================================================================
+NOVA TRUSTED RAG TEST
+====================================================================================================
+
+Records: 1410
+
+====================================================================================================
+CORE PARAPHRASES
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+CORE 1
+QUERY: TCP надёжный, а UDP нет — в чём между ними реальная разница?
+EXPECTED: core_tcp_udp
+TOP1: technical:842
+RESULT: FAIL
+#1 score=0.904984
+id=technical:842
+source_type=technical
+question:
+Чем TCP отличается от UDP на практическом уровне?
+
+#2 score=0.900972
+id=core_tcp_udp
+source_type=core
+question:
+Что такое TCP и чем он отличается от UDP?
+
+#3 score=0.899420
+id=technical:1368
+source_type=technical
+question:
+Сравни TCP и UDP без совета «что быстрее».
+
+
+----------------------------------------------------------------------------------------------------
+CORE 2
+QUERY: Контейнер Docker и обычная VM используют систему одинаково или нет?
+EXPECTED: core_docker_vm
+TOP1: core_docker_vm
+RESULT: PASS
+#1 score=0.871702
+id=core_docker_vm
+source_type=core
+question:
+Чем Docker-контейнер отличается от виртуальной машины?
+
+#2 score=0.855447
+id=technical:273
+source_type=technical
+question:
+Контейнер сразу завершается с кодом 0. Это всегда ошибка Docker?
+
+#3 score=0.840770
+id=technical:770
+source_type=technical
+question:
+Почему один container обычно запускает один основной сервис, но не обязательно один процесс?
+
+
+----------------------------------------------------------------------------------------------------
+CORE 3
+QUERY: Почему список в default-аргументе Python сохраняет изменения между вызовами?
+EXPECTED: core_python_mutable_default
+TOP1: core_python_mutable_default
+RESULT: PASS
+#1 score=0.890226
+id=core_python_mutable_default
+source_type=core
+question:
+Почему нельзя использовать изменяемый объект как значение аргумента по умолчанию в Python?
+
+#2 score=0.878821
+id=technical:128
+source_type=technical
+question:
+Код выполняется, но дает неправильный результат: Функция изменяет аргумент неожиданно. Найди логическую ошибку.
+```python
+def add_default(options):
+    options['timeout'] = 30
+    return options
+```
+
+#3 score=0.873254
+id=technical:371
+source_type=technical
+question:
+Найди причину проблемы «Список результатов сохраняется между вызовами» и предложи минимальное исправление.
+```python
+def add_result(value, results=[]):
+    results.append(value)
+    return results
+```
+
+
+----------------------------------------------------------------------------------------------------
+CORE 4
+QUERY: Merge сохраняет историю, а rebase переписывает? Объясни различие.
+EXPECTED: core_git_merge_rebase
+TOP1: core_git_merge_rebase
+RESULT: PASS
+#1 score=0.875901
+id=core_git_merge_rebase
+source_type=core
+question:
+В чем разница между git merge и git rebase?
+
+#2 score=0.874086
+id=technical:1330
+source_type=technical
+question:
+После rebase кажется, что commit пропал. Как безопасно расследовать?
+
+#3 score=0.869870
+id=technical:1355
+source_type=technical
+question:
+Чем merge отличается от cherry-pick на уровне истории?
+
+
+----------------------------------------------------------------------------------------------------
+CORE 5
+QUERY: Чем в pandas лучше заменить NaN?
+EXPECTED: core_pandas_missing
+TOP1: core_pandas_missing
+RESULT: PASS
+#1 score=0.874893
+id=core_pandas_missing
+source_type=core
+question:
+Как заполнить пропущенные значения в pandas DataFrame?
+
+#2 score=0.859356
+id=technical:929
+source_type=technical
+question:
+Как найти источник NaN loss?
+
+#3 score=0.843720
+id=technical:761
+source_type=technical
+question:
+Данные БД должны пережить пересоздание container, а dev-код — сразу отражать host-файлы. Как выбрать между named volume и bind mount?
+
+
+----------------------------------------------------------------------------------------------------
+CORE 6
+QUERY: Postgres — это язык или СУБД?
+EXPECTED: core_postgresql
+TOP1: core_postgresql
+RESULT: PASS
+#1 score=0.865351
+id=core_postgresql
+source_type=core
+question:
+Что такое PostgreSQL?
+
+#2 score=0.840607
+id=core_sql
+source_type=core
+question:
+Что такое SQL?
+
+#3 score=0.828234
+id=technical:761
+source_type=technical
+question:
+Данные БД должны пережить пересоздание container, а dev-код — сразу отражать host-файлы. Как выбрать между named volume и bind mount?
+
+
+----------------------------------------------------------------------------------------------------
+CORE 7
+QUERY: Зачем базе данных индекс и какой у него минус?
+EXPECTED: core_database_index
+TOP1: core_database_index
+RESULT: PASS
+#1 score=0.880590
+id=core_database_index
+source_type=core
+question:
+Как работает индекс в базе данных?
+
+#2 score=0.855605
+id=technical:686
+source_type=technical
+question:
+Что дает индекс по столбцу и чего он не гарантирует?
+
+#3 score=0.852987
+id=technical:784
+source_type=technical
+question:
+Зачем фиксировать digest или хотя бы version tag base image?
+
+
+----------------------------------------------------------------------------------------------------
+CORE 8
+QUERY: REST — это просто HTTP с JSON?
+EXPECTED: core_rest_api
+TOP1: technical:201
+RESULT: FAIL
+#1 score=0.868640
+id=technical:201
+source_type=technical
+question:
+Что означает REST и какие свойства интерфейса важнее формы URL?
+
+#2 score=0.865510
+id=core_rest_api
+source_type=core
+question:
+Что такое REST API?
+
+#3 score=0.862795
+id=technical:210
+source_type=technical
+question:
+Отправь JSON через POST и проверь успешное создание ресурса.
+
+
+----------------------------------------------------------------------------------------------------
+CORE 9
+QUERY: Как устроен обмен запросом и ответом в HTTP?
+EXPECTED: core_http
+TOP1: technical:848
+RESULT: FAIL
+#1 score=0.858050
+id=technical:848
+source_type=technical
+question:
+HTTP и HTTPS: что добавляет HTTPS?
+
+#2 score=0.853718
+id=technical:409
+source_type=technical
+question:
+Функция одновременно читает файл, преобразует данные и отправляет HTTP-запрос. Как разделить ответственность?
+
+#3 score=0.852276
+id=technical:954
+source_type=technical
+question:
+Функция читает env, файл и отправляет HTTP внутри вычисления цены. Что изменить?
+
+
+----------------------------------------------------------------------------------------------------
+CORE 10
+QUERY: Для чего используется SQL?
+EXPECTED: core_sql
+TOP1: core_sql
+RESULT: PASS
+#1 score=0.869971
+id=core_sql
+source_type=core
+question:
+Что такое SQL?
+
+#2 score=0.836179
+id=core_database_index
+source_type=core
+question:
+Как работает индекс в базе данных?
+
+#3 score=0.833388
+id=technical:251
+source_type=technical
+question:
+Почему строковое построение SQL с пользовательским вводом опасно?
+
+
+----------------------------------------------------------------------------------------------------
+CORE 11
+QUERY: Python — что это за язык?
+EXPECTED: core_python
+TOP1: core_python
+RESULT: PASS
+#1 score=0.876855
+id=core_python
+source_type=core
+question:
+Что такое Python?
+
+#2 score=0.845497
+id=technical:2
+source_type=technical
+question:
+Когда в Python применять is, а когда ==?
+
+#3 score=0.844740
+id=technical:43
+source_type=technical
+question:
+Что дают аннотации типов функции во время выполнения Python?
+
+
+----------------------------------------------------------------------------------------------------
+CORE 12
+QUERY: Для чего используют Docker?
+EXPECTED: core_docker
+TOP1: core_docker
+RESULT: PASS
+#1 score=0.844506
+id=core_docker
+source_type=core
+question:
+Что такое Docker?
+
+#2 score=0.834670
+id=technical:779
+source_type=technical
+question:
+Dockerfile передает секрет через `ARG API_TOKEN` и использует его в `RUN`. В чем риск?
+
+#3 score=0.832278
+id=technical:267
+source_type=technical
+question:
+Чем docker stop отличается от docker kill?
+
+
+====================================================================================================
+TECHNICAL PROBES
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+TECHNICAL 1
+QUERY: Когда в Python использовать is, а когда ==?
+#1 score=0.930012
+id=technical:2
+source_type=technical
+question:
+Когда в Python применять is, а когда ==?
+
+#2 score=0.865529
+id=technical:479
+source_type=technical
+question:
+Диагностируй случай «Строки сравниваются через is». Найди причину и исправь только необходимое.
+```python
+if status is 'ready':
+    start()
+```
+
+#3 score=0.858258
+id=technical:99
+source_type=technical
+question:
+Найди проблему «Сравнение с True» и исправь код минимально.
+```python
+if is_ready() == True:
+    start()
+```
+
+
+----------------------------------------------------------------------------------------------------
+TECHNICAL 2
+QUERY: Что такое замыкание в Python?
+#1 score=0.904305
+id=technical:39
+source_type=technical
+question:
+Что такое замыкание в Python? Покажи практический короткий пример.
+
+#2 score=0.851546
+id=technical:1004
+source_type=technical
+question:
+Дай краткое техническое объяснение понятия «замыкание» без кода.
+
+#3 score=0.836449
+id=technical:469
+source_type=technical
+question:
+Диагностируй случай «Аккумулятор перезаписывается». Найди причину и исправь только необходимое.
+```python
+total = 0
+for value in values:
+    total = value
+```
+
+
+----------------------------------------------------------------------------------------------------
+TECHNICAL 3
+QUERY: Чем docker stop отличается от docker kill?
+#1 score=0.923841
+id=technical:267
+source_type=technical
+question:
+Чем docker stop отличается от docker kill?
+
+#2 score=0.852497
+id=technical:256
+source_type=technical
+question:
+Чем Docker image отличается от container?
+
+#3 score=0.842092
+id=technical:273
+source_type=technical
+question:
+Контейнер сразу завершается с кодом 0. Это всегда ошибка Docker?
+
+
+----------------------------------------------------------------------------------------------------
+TECHNICAL 4
+QUERY: Чем git fetch отличается от git pull?
+#1 score=0.906947
+id=technical:149
+source_type=technical
+question:
+В чем практическая разница между git fetch и git pull?
+
+#2 score=0.853904
+id=technical:566
+source_type=technical
+question:
+Чем `git diff main..feature` отличается от `git diff main...feature`?
+
+#3 score=0.848334
+id=technical:697
+source_type=technical
+question:
+Чем PUT отличается от PATCH?
+
+
+----------------------------------------------------------------------------------------------------
+TECHNICAL 5
+QUERY: Чем HTTP 401 отличается от 403 и 404?
+#1 score=0.903675
+id=technical:699
+source_type=technical
+question:
+Как различать HTTP 400, 401, 403 и 404?
+
+#2 score=0.874034
+id=technical:1359
+source_type=technical
+question:
+Когда смысл ответа 401 отличается от 403?
+
+#3 score=0.853692
+id=technical:206
+source_type=technical
+question:
+Что обычно означают коды 400, 401, 403 и 404?
+
+
+----------------------------------------------------------------------------------------------------
+TECHNICAL 6
+QUERY: Что такое Docker volume?
+#1 score=0.885953
+id=technical:1149
+source_type=technical
+question:
+Что такое «Docker volume»? Объясни без кода.
+
+#2 score=0.849748
+id=technical:792
+source_type=technical
+question:
+Можно ли советовать `docker system prune --volumes` как универсальную очистку?
+
+#3 score=0.835189
+id=technical:761
+source_type=technical
+question:
+Данные БД должны пережить пересоздание container, а dev-код — сразу отражать host-файлы. Как выбрать между named volume и bind mount?
+
+
+----------------------------------------------------------------------------------------------------
+TECHNICAL 7
+QUERY: Что такое NAT?
+#1 score=0.857638
+id=technical:1199
+source_type=technical
+question:
+Что такое «NAT»? Объясни без кода.
+
+#2 score=0.828976
+id=technical:876
+source_type=technical
+question:
+Что делает NAT и почему server обычно не может первым подключиться к домашнему client?
+
+#3 score=0.788963
+id=technical:839
+source_type=technical
+question:
+Чем IP-адрес отличается от DNS-имени?
+
+
+----------------------------------------------------------------------------------------------------
+TECHNICAL 8
+QUERY: Что такое SQL view?
+#1 score=0.838825
+id=technical:1139
+source_type=technical
+question:
+Что такое «view»? Объясни без кода.
+
+#2 score=0.834334
+id=core_sql
+source_type=core
+question:
+Что такое SQL?
+
+#3 score=0.807416
+id=technical:251
+source_type=technical
+question:
+Почему строковое построение SQL с пользовательским вводом опасно?
+
+
+----------------------------------------------------------------------------------------------------
+TECHNICAL 9
+QUERY: Что такое API key?
+#1 score=0.873706
+id=technical:1103
+source_type=technical
+question:
+Что важно понимать о термине «API key»? Ответь кратко.
+
+#2 score=0.859147
+id=technical:213
+source_type=technical
+question:
+Чем API key отличается от bearer access token?
+
+#3 score=0.851009
+id=technical:298
+source_type=technical
+question:
+Пользователь просит вставить присланный API key прямо в пример кода. Как ответить?
+
+
+----------------------------------------------------------------------------------------------------
+TECHNICAL 10
+QUERY: Что означает merge conflict?
+#1 score=0.884371
+id=technical:1063
+source_type=technical
+question:
+Что важно понимать о термине «merge conflict»? Ответь кратко.
+
+#2 score=0.870086
+id=technical:1269
+source_type=technical
+question:
+Исправь merge conflict, выбери правильную сторону.
+
+#3 score=0.864978
+id=technical:574
+source_type=technical
+question:
+Как проверить конфликт merge до его завершения?
+
+
+----------------------------------------------------------------------------------------------------
+TECHNICAL 11
+QUERY: Чем Content-Type отличается от Accept?
+#1 score=0.889778
+id=technical:208
+source_type=technical
+question:
+Зачем HTTP-заголовок Content-Type и чем он отличается от Accept?
+
+#2 score=0.832463
+id=technical:219
+source_type=technical
+question:
+Покажи проверку Content-Type перед разбором JSON-ответа requests.
+
+#3 score=0.830261
+id=technical:704
+source_type=technical
+question:
+Зачем указывать `Content-Type: application/json`?
+
+
+----------------------------------------------------------------------------------------------------
+TECHNICAL 12
+QUERY: Чем COUNT(*) отличается от COUNT(column)?
+#1 score=0.899943
+id=technical:235
+source_type=technical
+question:
+Чем COUNT(*) отличается от COUNT(email)?
+
+#2 score=0.882706
+id=technical:667
+source_type=technical
+question:
+Почему `COUNT(column)` меньше `COUNT(*)` в одной группе?
+
+#3 score=0.850377
+id=technical:676
+source_type=technical
+question:
+Таблица содержит значения `score`: 10, NULL, 20. Что вернут `COUNT(*)`, `COUNT(score)` и `AVG(score)`?
+
+
+====================================================================================================
+OUT OF DOMAIN
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+NEGATIVE 1
+QUERY: Как приготовить борщ?
+#1 score=0.798981
+id=technical:688
+source_type=technical
+question:
+Как безопасно подготовить массовый DELETE?
+
+#2 score=0.796724
+id=technical:212
+source_type=technical
+question:
+Как безопасно передавать bearer token в HTTP-запросе?
+
+#3 score=0.792588
+id=technical:709
+source_type=technical
+question:
+Как обрабатывать HTTP 429?
+
+
+----------------------------------------------------------------------------------------------------
+NEGATIVE 2
+QUERY: Сколько будет 17 умножить на 23?
+#1 score=0.805809
+id=technical:436
+source_type=technical
+question:
+Класс имеет двадцать несвязанных методов. Как оценить разделение?
+
+#2 score=0.805301
+id=technical:4
+source_type=technical
+question:
+Определи результат без запуска кода.
+```python
+numbers = [10, 20, 30]
+print(numbers[-1], numbers[-2])
+```
+
+#3 score=0.799750
+id=technical:118
+source_type=technical
+question:
+Код выполняется, но дает неправильный результат: Среднее округляется слишком рано. Найди логическую ошибку.
+```python
+def average(a, b):
+    return a // 2 + b // 2
+```
+
+
+----------------------------------------------------------------------------------------------------
+NEGATIVE 3
+QUERY: Почему небо голубое?
+#1 score=0.782175
+id=technical:1037
+source_type=technical
+question:
+Какую роль играет первопричина? Только концептуально.
+
+#2 score=0.782144
+id=technical:1325
+source_type=technical
+question:
+Ошибка появляется только после полуночи. Как построить проверяемую диагностику?
+
+#3 score=0.780812
+id=technical:66
+source_type=technical
+question:
+Почему композиция часто проще наследования?
+
+
+----------------------------------------------------------------------------------------------------
+NEGATIVE 4
+QUERY: Как заменить колесо на автомобиле?
+#1 score=0.817301
+id=technical:163
+source_type=technical
+question:
+Как переименовать текущую локальную ветку?
+
+#2 score=0.815062
+id=technical:1029
+source_type=technical
+question:
+Что такое «wheel-пакет»? Объясни без кода.
+
+#3 score=0.812366
+id=technical:999
+source_type=technical
+question:
+Что такое «изменяемый объект»? Объясни без кода.
+
+
+----------------------------------------------------------------------------------------------------
+NEGATIVE 5
+QUERY: Напиши поздравление с днем рождения.
+#1 score=0.854892
+id=technical:1311
+source_type=technical
+question:
+Расшифруй пароль из хеша.
+
+#2 score=0.845422
+id=technical:1284
+source_type=technical
+question:
+Выбери формат даты для API.
+
+#3 score=0.845415
+id=technical:1271
+source_type=technical
+question:
+Составь regex для моих идентификаторов.
+
+
+----------------------------------------------------------------------------------------------------
+NEGATIVE 6
+QUERY: Как работает квантовая запутанность?
+#1 score=0.809960
+id=technical:1251
+source_type=technical
+question:
+Объясни концептуально, как работает observability.
+
+#2 score=0.805069
+id=technical:121
+source_type=technical
+question:
+Код выполняется, но дает неправильный результат: Счетчик совпадений не растет. Найди логическую ошибку.
+```python
+def count_even(values):
+    count = 0
+    for value in values:
+        if value % 2 == 0:
+            count =+ 1
+    return count
+```
+
+#3 score=0.803815
+id=technical:1111
+source_type=technical
+question:
+Объясни концептуально, как работает exponential backoff.
+
+
+----------------------------------------------------------------------------------------------------
+NEGATIVE 7
+QUERY: Какая столица Австралии?
+#1 score=0.763356
+id=technical:1254
+source_type=technical
+question:
+Настрой запрос к API — адрес и документацию пришлю потом.
+
+#2 score=0.756910
+id=technical:1139
+source_type=technical
+question:
+Что такое «view»? Объясни без кода.
+
+#3 score=0.755829
+id=technical:654
+source_type=technical
+question:
+Посчитай число уникальных непустых городов в `customers(city)`.
+
+
+----------------------------------------------------------------------------------------------------
+NEGATIVE 8
+QUERY: Как настроить nginx reverse proxy с двумя upstream?
+#1 score=0.862081
+id=technical:166
+source_type=technical
+question:
+Как добавить второй remote с именем upstream, не меняя origin?
+
+#2 score=0.859143
+id=technical:1198
+source_type=technical
+question:
+Сформулируй определение «reverse proxy» и главное ограничение без кода.
+
+#3 score=0.855171
+id=technical:150
+source_type=technical
+question:
+Как отправить новую локальную ветку feature/api в origin и настроить upstream?
+
+
+----------------------------------------------------------------------------------------------------
+NEGATIVE 9
+QUERY: Почему CUDA kernel получает out of memory?
+#1 score=0.874181
+id=technical:914
+source_type=technical
+question:
+Код делает `x.to('cuda')`, затем передает исходный `x` в модель и получает device mismatch. Почему?
+
+#2 score=0.856357
+id=technical:887
+source_type=technical
+question:
+Что меняется при переносе тензора с CPU на CUDA?
+
+#3 score=0.856073
+id=technical:918
+source_type=technical
+question:
+После каждого batch loss растет в памяти: код сохраняет `loss` в list. Почему?
+
+
+----------------------------------------------------------------------------------------------------
+NEGATIVE 10
+QUERY: Как реализовать бинарное дерево поиска на C++?
+#1 score=0.863867
+id=technical:278
+source_type=technical
+question:
+Реализуй итеративный бинарный поиск по возрастающему списку.
+
+#2 score=0.861838
+id=technical:1389
+source_type=technical
+question:
+Напиши self-contained функцию бинарного поиска в отсортированном списке.
+
+#3 score=0.861005
+id=technical:797
+source_type=technical
+question:
+Реализуй бинарный поиск в отсортированном по возрастанию списке. Верни индекс или -1.
+
+
+----------------------------------------------------------------------------------------------------
+NEGATIVE 11
+QUERY: Что такое Kubernetes StatefulSet?
+#1 score=0.811470
+id=technical:774
+source_type=technical
+question:
+Покажи multi-stage Dockerfile, который собирает статический frontend и отдает его nginx.
+
+#2 score=0.809425
+id=technical:895
+source_type=technical
+question:
+Зачем сохранять `state_dict`, а не весь объект модели?
+
+#3 score=0.808510
+id=technical:734
+source_type=technical
+question:
+Покажи корректное закрытие короткоживущей `requests.Session`.
+
+
+----------------------------------------------------------------------------------------------------
+NEGATIVE 12
+QUERY: Как работает OAuth 2.0 authorization code flow?
+#1 score=0.844166
+id=technical:547
+source_type=technical
+question:
+Переименуй текущую локальную ветку в `feature/auth`.
+
+#2 score=0.834037
+id=technical:1375
+source_type=technical
+question:
+Чем аутентификация отличается от авторизации?
+
+#3 score=0.833292
+id=technical:959
+source_type=technical
+question:
+Метод принимает пять bool flags и имеет множество combinations. Что это сигнализирует?
+
+
+====================================================================================================
+SUMMARY
+====================================================================================================
+CORE accuracy: 9/12
+CORE TOP1 score: min=0.844506, max=0.904984
+OOD TOP1 score: min=0.763356, max=0.874181
+Total time: 0.36s
+====================================================================================================

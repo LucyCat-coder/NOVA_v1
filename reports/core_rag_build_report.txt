@@ -1,0 +1,19 @@
+NOVA CORE RAG BUILD REPORT
+================================================================================
+
+Source: G:\NOVA\NOVA_project_NEW\data\knowledge\core_knowledge.jsonl
+Source SHA-256: 7c871768b9d2de09bcbee2d80900124d6987fd966098b311fb82b0e597bfe281
+
+Model: intfloat/multilingual-e5-small
+Pooling: masked_mean
+Embedding: canonical question + aliases
+Answer embedded: NO
+
+Records: 12
+Embedding dimension: 384
+
+FAISS: G:\NOVA\NOVA_project_NEW\rag\core_index.faiss
+JSONL: G:\NOVA\NOVA_project_NEW\rag\core_index.jsonl
+
+Embedding time: 0.2s
+Total time: 3.8s

@@ -1,0 +1,33 @@
+========================================================================================
+NOVA TECHNICAL ASSISTANT-ONLY SFT
+========================================================================================
+
+Base checkpoint: G:\NOVA\NOVA_project_NEW\out\final\best_final.pt
+Base iter_num: 45000
+Architecture: TIED
+Train examples: 1258
+Val examples: 140
+Batch size: 4
+Gradient accumulation: 8
+Effective batch: 32
+Learning rate: 1e-05
+Max steps: 20
+Ignore index: -100
+Baseline val loss: 1.561062
+
+step=1 train_loss=1.543001 grad_norm=1.772543 step_time=0.402s
+step=5 train_loss=1.560105 grad_norm=1.754536 step_time=0.314s
+step=10 train_loss=1.479032 grad_norm=1.475555 step_time=0.314s
+step=15 train_loss=1.379522 grad_norm=1.309188 step_time=0.337s
+step=20 train_loss=1.367640 grad_norm=1.145508 step_time=0.320s
+step=20 val_loss=1.292469 improved=True
+
+========================================================================================
+SUMMARY
+========================================================================================
+Baseline val loss: 1.561062
+Best val loss: 1.292469
+Final val loss: 1.292469
+Total time: 10.87s
+Best checkpoint: G:\NOVA\NOVA_project_NEW\out\candidate_sft\technical_v1\best_candidate.pt
+Last checkpoint: G:\NOVA\NOVA_project_NEW\out\candidate_sft\technical_v1\last_candidate.pt
