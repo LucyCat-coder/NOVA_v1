@@ -1,0 +1,29 @@
+# NOVA_v1 — line ending and binary-file rules
+
+# Normalize text in the Git repository.
+* text=auto
+
+# Cross-platform source and documentation files.
+*.py    text eol=lf
+*.md    text eol=lf
+*.txt   text eol=lf
+*.json  text eol=lf
+*.jsonl text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+*.toml  text eol=lf
+*.cfg   text eol=lf
+*.ini   text eol=lf
+
+# Windows command files.
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binary model / index artifacts.
+*.pt          binary
+*.pth         binary
+*.ckpt        binary
+*.safetensors binary
+*.onnx        binary
+*.faiss       binary
